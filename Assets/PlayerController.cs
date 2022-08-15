@@ -18,14 +18,17 @@ public class PlayerController : MonoBehaviour
         {
             transform.Translate(Speed * Time.deltaTime * Vector2.right);
         }
+
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Translate(Speed * Time.deltaTime * Vector2.left);
         }
+
         if (Input.GetKey(KeyCode.UpArrow))
         {
             transform.Translate(Speed * Time.deltaTime * Vector2.up);
         }
+
         if (Input.GetKey(KeyCode.DownArrow))
         {
             transform.Translate(Speed * Time.deltaTime * Vector2.down);
@@ -37,6 +40,19 @@ public class PlayerController : MonoBehaviour
         if (otherObject.gameObject.tag == "cookie")
         {
             Destroy(otherObject.gameObject);
+        }
+
+        if (otherObject.gameObject.tag == "Enemy")
+        {
+            //transform.position = new Vector3(0f, -4f, 0f);
+        }
+
+        if (otherObject.gameObject.name == "Exit")
+        {
+            Speed = 0;
+            GetComponent<CircleCollider2D>().enabled = false;
+            transform.position = new Vector3(0f, 0f, 0f);
+            transform.localScale = new Vector3(5f, 5f, 5f);
         }
     }
 
