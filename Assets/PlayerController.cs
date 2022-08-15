@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
 
         if (otherObject.gameObject.tag == "Enemy")
         {
-            //transform.position = new Vector3(0f, -4f, 0f);
+            transform.position = new Vector3(0f, -4f, 0f);
         }
 
         if (otherObject.gameObject.name == "Exit")
