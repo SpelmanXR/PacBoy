@@ -5,14 +5,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float Speed = 1f;
-    AudioSource audioSource;
-    public AudioClip ouch;
-    public AudioClip chomp;
 
     // Start is called before the first frame update
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -40,15 +36,7 @@ public class PlayerController : MonoBehaviour
     {
         if (otherObject.gameObject.tag == "cookie")
         {
-            audioSource.clip = chomp;
-            audioSource.Play();
             Destroy(otherObject.gameObject);
-        }
-
-        if (otherObject.gameObject.tag == "Enemy")
-        {
-            audioSource.clip = ouch;
-            audioSource.Play();
         }
     }
 
